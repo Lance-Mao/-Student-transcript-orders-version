@@ -1,0 +1,26 @@
+{
+  "name": "studentAchievement",
+  "version": "1.0.0",
+  "description": "学生成绩",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node run-tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M977986310/PhysicalCompetition.git"
+  },
+  "author": "ThoughtWorks School",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/M977986310/PhysicalCompetition.git"
+  },
+  "homepage": "https://school.thoughtworks.cn",
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  },
+  "dependencies": {
+    "cli-interact": "^0.1.9"
+  }
+}
