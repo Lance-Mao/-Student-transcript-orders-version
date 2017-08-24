@@ -14,7 +14,7 @@ function calculateStudentAchievement(scoreInfo, no) {
         scoreInfo.map(item => {
             if (item.no === noByOne) {
                 for (let i = 0; i < splitResults(item.score).length; i += 2) {
-                    allScore += Number(splitResults(item.score)[i]);
+                    allScore += Number(splitResults(item.score)[i + 1]);
                 }
             }
         })
@@ -44,20 +44,21 @@ function calculateTheResults(scoreInfo, no) {
 
     let studentScore = ``;
     scoreInfo.map((item,index) => {
+        studentScore += item.name;
         for (let i = 0; i < splitResults(item.score).length; i += 2) {
-            studentScore +=(item.name+ "|" + splitResults(item.score)[i]);
+            studentScore +=("|" + splitResults(item.score)[i + 1]);
         }
         studentScore += ("|" + calculateStudentAchievementToShow[0][index] + "|" + calculateStudentAchievementToShow[1][index])+`\n`;
     })
 
-    let klassScore = `全班总分平均数：${calculateTheClassResultsToShow[1]}\n`+`全班总分中位数：${calculateTheClassResultsToShow[0]}`;
+    let klazzScore = `全班总分平均数：${calculateTheClassResultsToShow[1]}\n`+`全班总分中位数：${calculateTheClassResultsToShow[0]}`;
 
     console.log(`成绩单
 ${title}
 ========================
 ${studentScore}
 ========================
-${klassScore}`)
+${klazzScore}`)
 }
 
 function showResults(scoreInfo, no) {
