@@ -6,10 +6,6 @@ function splitResults(str) {
     return str.split(",").join(":").toString().split(":");
 }
 
-function splitResultsToClass(arr){
-    return arr.toString().split(":");
-}
-
 function calculateStudentAchievement(scoreInfo, no) {
     let totalStudentAchievement = [];
     let averageStudentPerformance = [];
@@ -17,8 +13,8 @@ function calculateStudentAchievement(scoreInfo, no) {
         let allScore = 0;
         scoreInfo.map(item => {
             if (item.no === noByOne) {
-                for (let i = 0; i < splitResultsToClass(splitResults(scoreInfo[0].score)).length; i += 2) {
-                    allScore += Number(splitResultsToClass(splitResults(scoreInfo[0].score))[i]);
+                for (let i = 0; i < splitResults(item.score).length; i += 2) {
+                    allScore += Number(splitResults(item.score)[i]);
                 }
             }
         })
@@ -41,15 +37,15 @@ function calculateTheResults(scoreInfo, no) {
     let calculateTheClassResultsToShow = calculateTheClassResults(calculateStudentAchievement(scoreInfo, no));//全班总成绩和平均成绩
 
     let title = '姓名';
-    for (let i = 0; i < splitResultsToClass(splitResults(scoreInfo[0].score)).length; i += 2) {
-        title += "|" + splitResultsToClass(splitResults(scoreInfo[0].score))[i];
+    for (let i = 0; i < splitResults(scoreInfo[0].score).length; i += 2) {
+        title += "|" + splitResults(scoreInfo[0].score)[i];
     }
     title += '|平均分|总分';
 
     let studentScore = ``;
     scoreInfo.map((item,index) => {
-        for (let i = 0; i < splitResultsToClass(splitResults(scoreInfo[0].score)).length; i += 2) {
-            studentScore +=(item.name+ "|" + splitResultsToClass(splitResults(scoreInfo[0].score))[i]);
+        for (let i = 0; i < splitResults(item.score).length; i += 2) {
+            studentScore +=(item.name+ "|" + splitResults(item.score)[i]);
         }
         studentScore += ("|" + calculateStudentAchievementToShow[0][index] + "|" + calculateStudentAchievementToShow[1][index])+`\n`;
     })
