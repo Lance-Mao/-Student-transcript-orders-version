@@ -3,7 +3,7 @@ function judgmentFormatToResult(no) {
 }
 
 function splitResults(str) {
-    return str.split(":");
+    return str.split(",").join(":").toString().split(":");
 }
 
 function splitResultsToClass(arr){
