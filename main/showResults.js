@@ -18,7 +18,7 @@ function calculateStudentAchievement(scoreInfo, no) {
                 }
             }
         })
-        averageStudentPerformance.push(allScore / (splitResults(scoreInfo[0].score).length) / 2);
+        averageStudentPerformance.push(allScore / (splitResults(scoreInfo[0].score).length/ 2));
         totalStudentAchievement.push(allScore);
     })
 
